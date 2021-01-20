@@ -8,7 +8,7 @@
     margin: 0;
     display: flex;
     justify-content: space-between;
-    // font-family: $secondary-font;
+    flex-wrap: wrap;
     font-family: "Raleway", sans-serif;
     button,
     ::ng-deep .mat-select-value {

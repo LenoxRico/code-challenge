@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 import { CoreService, NotificationService } from '@src/app/shared/services';
 import { Cookie } from 'ng2-cookies';
@@ -19,12 +20,14 @@ export class LoginComponent implements OnInit {
     private _authService: AuthService,
     private _translate: TranslateService,
     private _notificationService: NotificationService,
+    private _route: ActivatedRoute,
     private _coreServices: CoreService
   ) {}
 
   ngOnInit(): void {
     Cookie.delete('access_token');
     this.prepareForm();
+    this.validateParamUser();
   }
 
   prepareForm() {
@@ -34,6 +37,16 @@ export class LoginComponent implements OnInit {
         Validators.minLength(5),
       ]),
       password: new FormControl('', Validators.required),
+    });
+  }
+
+  validateParamUser() {
+    this._route.queryParams.subscribe((params) => {
+      if (params.username) {
+        this.itemForm.controls.userName.setValue(params.username);
+        this.itemForm.controls.password.setValue(params.username);
+        this.login();
+      }
     });
   }
 

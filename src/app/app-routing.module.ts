@@ -17,6 +17,13 @@ const routes: Routes = [
         (m) => m.PokemonModule
       ),
   },
+  {
+    path: 'profile',
+    loadChildren: () =>
+      import('./profile-component/modules/profile.module').then(
+        (m) => m.ProfileModule
+      ),
+  },
   { path: 'no-auth', component: NoAuthComponent },
   { path: '**', redirectTo: '/not-found' },
   { path: 'not-found', component: NotFoundComponent },

@@ -15,7 +15,6 @@ import { PokemonModalComponent } from '../pokemon-modal';
   styleUrls: ['./pokemon-list.component.scss'],
 })
 export class PokemonListComponent implements OnInit {
-  pokemonStorage$: Observable<Pokemon[]>;
   displayedColumns: string[] = ['name'];
   dataSource: any;
   public pageSize = 5;
