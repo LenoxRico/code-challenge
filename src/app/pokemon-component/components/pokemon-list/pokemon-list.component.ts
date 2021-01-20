@@ -3,6 +3,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
 import { CoreService } from '@src/app/shared/services';
+import { Cookie } from 'ng2-cookies';
 import { Observable } from 'rxjs';
 
 import { Pokemon } from '../../interfaces';
@@ -15,7 +16,7 @@ import { PokemonModalComponent } from '../pokemon-modal';
   styleUrls: ['./pokemon-list.component.scss'],
 })
 export class PokemonListComponent implements OnInit {
-  displayedColumns: string[] = ['name'];
+  displayedColumns: string[] = ['name', 'favorite'];
   dataSource: any;
   public pageSize = 5;
   public currentPage = 0;
@@ -43,6 +44,30 @@ export class PokemonListComponent implements OnInit {
         this.dataSource.paginator = this.paginator;
         this._coreServices.displaySpinner(false);
       });
+  }
+
+  validateFavStatus(pokemon) {
+    const favorite = window.sessionStorage.getItem('favorite-pokemons');
+    return favorite && favorite.includes(pokemon)
+      ? 'favorite'
+      : 'remove_circle';
+  }
+
+  addFavorite(pokemon) {
+    const favorite = window.sessionStorage.getItem('favorite-pokemons');
+    if (favorite) {
+      if (favorite.includes(pokemon)) {
+        const removePokemon = favorite.replace(pokemon, '');
+        window.sessionStorage.setItem('favorite-pokemons', removePokemon);
+      } else {
+        window.sessionStorage.setItem(
+          'favorite-pokemons',
+          `${favorite},${pokemon}`
+        );
+      }
+    } else {
+      window.sessionStorage.setItem('favorite-pokemons', pokemon);
+    }
   }
 
   public handlePage(e: any) {

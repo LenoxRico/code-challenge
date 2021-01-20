@@ -28,6 +28,7 @@ export class AuthService {
 
   logout() {
     Cookie.delete('access_token');
+    window.sessionStorage.removeItem('favorite-pokemons');
     this._router.navigate(['/login']);
   }
 }

@@ -8,7 +8,8 @@
   "pokemon-component": {
     "pokemon-list": {
       "title": "Pokemon List",
-      "table-header-name": "Name"
+      "table-header-name": "Name",
+      "table-header-favorite": "Favorite"
     },
     "pokemon-modal": {
       "title": "Pokemon Detail",
@@ -18,6 +19,12 @@
       "stats": "Stats",
       "stay": "Where usually find",
       "button-cancel": "Close"
+    }
+  },
+  "favorite-component": {
+    "favorite-list": {
+      "title": "Favorites List",
+      "empty": "There's no favorites"
     }
   },
   "login": {

@@ -8,7 +8,8 @@
   "pokemon-component": {
     "pokemon-list": {
       "title": "Lista de Pokemons",
-      "table-header-name": "Nombre"
+      "table-header-name": "Nombre",
+      "table-header-favorite": "Favorito"
     },
     "pokemon-modal": {
       "title": "Detalle del Pokemon",
@@ -18,6 +19,12 @@
       "stats": "Estadisticas",
       "stay": "Usualmente se encuentra en",
       "button-cancel": "Cerrar"
+    }
+  },
+  "favorite-component": {
+    "favorite-list": {
+      "title": "Lista de Favoritos",
+      "empty": "No hay lista de Favoritos"
     }
   },
   "login": {

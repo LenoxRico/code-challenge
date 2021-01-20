@@ -24,6 +24,13 @@ const routes: Routes = [
         (m) => m.ProfileModule
       ),
   },
+  {
+    path: 'favorite',
+    loadChildren: () =>
+      import('./favorite-component/modules/favorite.module').then(
+        (m) => m.FavoriteModule
+      ),
+  },
   { path: 'no-auth', component: NoAuthComponent },
   { path: '**', redirectTo: '/not-found' },
   { path: 'not-found', component: NotFoundComponent },
