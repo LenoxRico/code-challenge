@@ -1,0 +1,51 @@
+<app-nav-bar></app-nav-bar>
+<div
+  class="pokemon-card"
+  fxLayout="column"
+  fxLayoutGap="25px"
+  fxLayoutAlign="center center"
+>
+  <div></div>
+  <mat-card class="container-list mat-elevation-z8">
+    <div class="header">
+      <h2>{{ "pokemon-component.pokemon-list.title" | translate }}</h2>
+    </div>
+    <mat-card-content
+      class="pokemon-container"
+      fxLayout="column"
+      fxLayoutGap="25px"
+      fxLayoutAlign="center center"
+    >
+      <div class="container-list__table" fxLayout="column" fxLayoutGap="25px">
+        <table mat-table [dataSource]="dataSource">
+          <!-- Name Column -->
+          <ng-container matColumnDef="name">
+            <th mat-header-cell *matHeaderCellDef>
+              {{
+                "pokemon-component.pokemon-list.table-header-name" | translate
+              }}
+            </th>
+            <td mat-cell *matCellDef="let pokemon">
+              <button mat-button (click)="openDialog(pokemon)" *ngIf="pokemon">
+                <img [src]="src" [alt]="pokemon.name" />
+                <span>{{ pokemon.name | titlecase }}</span>
+              </button>
+            </td>
+          </ng-container>
+
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+        </table>
+      </div>
+      <mat-paginator
+        #paginator
+        [pageSizeOptions]="[5, 10, 50]"
+        [showFirstLastButtons]="false"
+        [hidePageSize]="true"
+        [pageIndex]="currentPage"
+        [pageSize]="pageSize"
+        (page)="handlePage($event)"
+      ></mat-paginator>
+    </mat-card-content>
+  </mat-card>
+</div>

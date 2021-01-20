@@ -1,0 +1,22 @@
+.navbar {
+  display: flex;
+  flex-direction: row;
+  &__options {
+    width: calc(100% - 100px);
+    background: rgba(#ffcb05, 1);
+    padding: 0 50px;
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+    // font-family: $secondary-font;
+    font-family: "Raleway", sans-serif;
+    button,
+    ::ng-deep .mat-select-value {
+      color: #2e6ead;
+    }
+  }
+  img {
+    width: 100px;
+    height: auto;
+  }
+}

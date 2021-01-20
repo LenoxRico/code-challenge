@@ -1,0 +1,41 @@
+{
+  "alternative": {
+    "not-found": {
+      "text": "La página que busca no ha sido encontrada.",
+      "button": "Volver"
+    }
+  },
+  "pokemon-component": {
+    "pokemon-list": {
+      "title": "Lista de Pokemons",
+      "table-header-name": "Nombre"
+    },
+    "pokemon-modal": {
+      "title": "Detalle del Pokemon",
+      "name": "Nombre",
+      "move": "Movimientos",
+      "type": "Tipo",
+      "stats": "Estadisticas",
+      "stay": "Usualmente se encuentra en",
+      "button-cancel": "Cerrar"
+    }
+  },
+  "login": {
+    "title": "Iniciar Sesión",
+    "user": "Usuario",
+    "password": "Contraseña",
+    "button-login": "Iniciar Sesión"
+  },
+  "shared": {
+    "nav-bar": {
+      "list": "Lista de Pokemons",
+      "favs": "Favoritos",
+      "profile": "Perfil",
+      "log-out": "Cerrar Sesión"
+    },
+    "notification": {
+      "success-login": "¡Bienvenido!",
+      "error-login": "Lo sentimos, las credenciales son invalidas!"
+    }
+  }
+}

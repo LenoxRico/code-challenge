@@ -1,0 +1,41 @@
+{
+  "alternative": {
+    "not-found": {
+      "text": "The page was not found.",
+      "button": "Go Back"
+    }
+  },
+  "pokemon-component": {
+    "pokemon-list": {
+      "title": "Pokemon List",
+      "table-header-name": "Name"
+    },
+    "pokemon-modal": {
+      "title": "Pokemon Detail",
+      "name": "Name",
+      "move": "Moves",
+      "type": "Type",
+      "stats": "Stats",
+      "stay": "Where usually find",
+      "button-cancel": "Close"
+    }
+  },
+  "login": {
+    "title": "Login",
+    "user": "User",
+    "password": "Password",
+    "button-login": "Login"
+  },
+  "shared": {
+    "nav-bar": {
+      "list": "Pokemon List",
+      "favs": "Favorites",
+      "profile": "Profile",
+      "log-out": "Log Out"
+    },
+    "notification": {
+      "success-login": "Welcome!",
+      "error-login": "Sorry, Invalid credentials!"
+    }
+  }
+}
